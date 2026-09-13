@@ -31,7 +31,7 @@
 <body>
 
   <h1>Privacy Policy</h1>
-  <p class="meta">Noor Al-Quran — نور القرآن &nbsp;|&nbsp; Last updated: 2026-07-10 &nbsp;|&nbsp; Contact: <a href="mailto:nalhamzy@gmail.com">nalhamzy@gmail.com</a></p>
+  <p class="meta">Noor Al-Quran — نور القرآن &nbsp;|&nbsp; Last updated: 2026-09-13 &nbsp;|&nbsp; Contact: <a href="mailto:nalhamzy@gmail.com">nalhamzy@gmail.com</a></p>
 
   <p>Noor Al-Quran is a Quran reading and khatma tracking app made by Ideal Intelligence. It is designed to be private by default: reading works fully offline, there are no ads, and there is no third-party advertising or cross-app tracking of any kind. This policy explains in plain language what data the app handles and how. If anything is unclear, email us and we will explain it.</p>
 
@@ -46,8 +46,8 @@
   <h2>2. What the app stores on your device</h2>
   <p>Your reading position, personal khatma progress, daily streak, and app settings (such as reminder time and theme) are stored locally on your device. This data never leaves your device unless you use the optional group features described below.</p>
 
-  <h2>3. Optional collective khatma features</h2>
-  <p>If you choose to join or create a shared (collective) khatma, the app uses Google Firebase to synchronize group progress. In that case the following limited data is processed:</p>
+  <h2>3. Anonymous sign-in and optional collective khatma features</h2>
+  <p>When you open the app with an internet connection and are not already signed in, it automatically signs in anonymously with Google Firebase and creates a basic cloud profile if one does not already exist. This happens even if you do not join or create a shared khatma. No email, name, or phone number is required for anonymous use. If you choose to participate in a shared (collective) khatma, Firebase also synchronizes your participation and group progress.</p>
   <table>
     <thead>
       <tr>
@@ -59,8 +59,13 @@
     <tbody>
       <tr>
         <td>An anonymous account identifier</td>
-        <td>To keep track of which pages you have claimed and completed in a shared khatma. No email, name, or phone number is required.</td>
+        <td>Created automatically on online startup to identify your app session and authorize access to online features. It also associates shared khatma participation with your account when you participate.</td>
         <td>Firebase Authentication (Google LLC)</td>
+      </tr>
+      <tr>
+        <td>A basic profile linked to the anonymous identifier</td>
+        <td>Stores a default guest display name, a country setting, account creation and activity timestamps, preferences, and progress counters initialized to zero. These profile fields are created even without shared khatma participation.</td>
+        <td>Cloud Firestore (Google LLC)</td>
       </tr>
       <tr>
         <td>Khatma participation data (pages claimed, pages completed, optional display name, optional dedication text you write)</td>
@@ -69,7 +74,7 @@
       </tr>
     </tbody>
   </table>
-  <p>If you never use the collective features, none of this data is created.</p>
+  <p>The automatic anonymous identifier and basic profile are separate from optional shared khatma participation. Shared khatma claims, completions, and dedications are recorded when you use those features; opening the app alone does not create a shared khatma contribution.</p>
 
   <h2>4. Diagnostics and analytics</h2>
   <p>The app may collect anonymous crash reports (Firebase Crashlytics) and aggregate, non-identifying usage statistics (Firebase Analytics) — for example, how many devices opened the reader on a given day. This information is used solely to fix bugs and improve the app. It is not linked to your identity and is never used for advertising or shared with data brokers.</p>
@@ -87,13 +92,13 @@
   </ul>
 
   <h2>7. Children</h2>
-  <p>The app is suitable for all ages. We do not knowingly collect personal information from children; the app requires no account, name, or email to use.</p>
+  <p>The app is suitable for all ages. We do not knowingly collect personal information from children; you do not need to register or provide a name or email to use the app. Automatic anonymous sign-in is described in section 3.</p>
 
   <h2>8. Data retention and deletion</h2>
-  <p>Local data is deleted when you delete the app. If you used the collective khatma features and want the associated anonymous account data removed, email <a href="mailto:nalhamzy@gmail.com">nalhamzy@gmail.com</a> and we will delete it.</p>
+  <p>Local data is deleted when you delete the app. If you want your cloud profile, anonymous account data, or associated collective khatma data removed, email <a href="mailto:nalhamzy@gmail.com">nalhamzy@gmail.com</a> and we will delete it.</p>
 
   <h2>9. Service providers</h2>
-  <p>We use Google Firebase (Authentication, Firestore, Crashlytics, Analytics) as our infrastructure provider for the optional online features described above. Firebase processes this data on our behalf under Google's <a href="https://firebase.google.com/support/privacy" rel="noopener">privacy and security terms</a>.</p>
+  <p>We use Google Firebase (Authentication, Firestore, Crashlytics, Analytics) as our infrastructure provider for anonymous sign-in, cloud profiles, optional collective features, and diagnostics described above. Firebase processes this data on our behalf under Google's <a href="https://firebase.google.com/support/privacy" rel="noopener">privacy and security terms</a>.</p>
 
   <h2>10. Changes to this policy</h2>
   <p>If we change this policy, we will update this page and the "Last updated" date above. Material changes will be highlighted in the app's release notes.</p>
